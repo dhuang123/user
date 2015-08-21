@@ -1,0 +1,78 @@
+<!DOCTYPE html >
+<!--[if lt IE 7]>
+<html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>
+<html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>
+<html lang="en" ng-app="myApp" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html lang="en" ng-app="myApp" class="no-js"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>My AngularJS App</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/normalize.css">
+    <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/main.css">
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="app.css">
+    <script src="bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
+</head>
+<body>
+
+<header ng-include="'views/layout/header.html'"></header>
+<!-- content. -->
+<div  class="container" style="padding-top: 80px;" autoscroll="true">
+    <div class="row row-offcanvas row-offcanvas-right">
+
+        <div class="col-xs-12 col-sm-9">
+            <p class="pull-right visible-xs">
+                <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Toggle nav</button>
+            </p>
+            <div ui-view class="jumbotron">
+                <h1>Welcome!</h1>
+                <p>This is a  quick Demo</p>
+
+            </div>
+            <div ui-view="detail">
+            </div>
+        </div><!--/.col-xs-12.col-sm-9-->
+
+        <div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar">
+            <div ng-include="'views/partials/user-list.html'"></div>
+        </div><!--/.sidebar-offcanvas-->
+    </div>
+</div>
+<!-- Include footer -->
+<footer ng-include="'views/layout/footer.html'"></footer>
+
+<!-- In production use:
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
+-->
+<script src="bower_components/angular/angular.js"></script>
+<script src="bower_components/angular-route/angular-route.js"></script>
+<script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+<script src="bower_components/jquery/dist/jquery.min.js"></script>
+<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="app.js"></script>
+<script src="js/routes/route.js"></script>
+<script src="js/controllers/pages/contact/detail.js"></script>
+<script src="js/controllers/pages/default/index.js"></script>
+<script src="js/services/user.js"></script>
+<script src="js/controllers/forms/edit-user.js"></script>
+<script src="js/controllers/partials/contact-list.js"></script>
+
+<noscript>
+    <h2>Your browser's JavaScript is disabled</h2>
+
+    <p>This website requires JavaScript. Please enable it in your browser's settings, options or preferences, and
+        refresh the page.</p>
+
+    <p>&gt;
+        <a href="app/http://www.activatejavascript.org/" target="_blank">Learn how to enable JavaScript in your
+            browser</a></p>
+</noscript>
+
+</body>
+</html>

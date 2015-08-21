@@ -1,0 +1,46 @@
+{
+  "contacts":[
+    {
+      "jobId": "0001",
+      "employed": "Yes",
+      "currentSalary": 60000,
+      "desiredSalary": 90000,
+      "name": "Alex Lans",
+      "address": "128 Burk St" ,
+      "availableDate":"2015-10-24",
+      "suburb": "Melbourne",
+      "state": "VIC",
+      "postcode": 3000,
+      "phone": "1234 4563",
+      "email": "alex@test.com"
+    },
+    {
+      "jobId": "0002",
+      "employed": "No",
+      "currentSalary": 60000,
+      "desiredSalary": 93000,
+      "name": "John Smith",
+      "address": "328 St Kilda Road" ,
+      "availableDate":"2015-10-24",
+      "suburb": "Melbourne",
+      "state": "VIC",
+      "postcode": 3300,
+      "phone": "1234 4563",
+      "email": "john@smith.com"
+    },
+    {
+      "jobId": "0003",
+      "employed": "Yes",
+      "currentSalary":100000,
+      "desiredSalary": 90000,
+      "name": "Tony Hashbin",
+      "address": "2/12 Test St" ,
+      "availableDate":"2015-10-24",
+      "suburb": "Box Hill",
+      "state": "VIC",
+      "postcode": 3000,
+      "phone": "1234 4563",
+      "email": "alex@test.com"
+    }
+  ]
+}

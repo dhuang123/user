@@ -1,0 +1,6 @@
+<div id="sidebar" ng-controller="contactListController">
+  <div class="list-group">
+    <h2>All Contacts</h2>
+    <a ng-repeat="contact in contacts" ui-sref="contacts.detail({contactId:contact.jobId})" class="list-group-item" ng-class="{active: $state.includes('contacts')}">{{contact.name}}</a>
+  </div>
+</div>

@@ -1,0 +1,103 @@
+<form name="editContactForm" novalidate ng-controller="editContactFormController" mit-form-submit="form.submit()">
+    <div class="table">
+        <div class="cell ca-form">
+            <div class="element-table">
+                <div class="form-group">
+                    <label for="jobId">Job Id</label>
+                    <input class="form-control" readonly type="text" id="jobId" name="jobId" ng-model="form.element.jobId.value" placeholder="{{form.element.jobId.placeholder}}"/>
+                </div>
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input class="form-control" type="text" id="name" name="name" ng-model="form.element.name.value" placeholder="{{form.element.name.placeholder}}" required />
+                    <ul class="errors">
+                        <li class="text-danger" ng-show="editContactForm.name.$error.required">Please enter your name.</li>
+                    </ul>
+                </div>
+                <div class="form-group">
+                    <label for="employed">Currently Employed</label>
+                    <input type="radio" name="employed" ng-model="form.element.employed.value" value="No" ng-required="!form.element.employed.value">  No
+                    <input type="radio" name="employed" ng-model="form.element.employed.value" value="Yes" ng-required="!form.element.employed.value"> Yes <br/>
+                    <ul class="errors">
+                        <li class="text-danger" ng-show="editContactForm.employed.$error.required">Please choose your current employment status.</li>
+                    </ul>
+                    <div class="form-group" ng-show="form.element.employed.value === 'Yes'">
+                        <label for="currentSalary">Current Salary</label>
+                        <input class="form-control" type="text" id="currentSalary" name="currentSalary" ng-model="form.element.currentSalary.value" placeholder="{{form.element.currentSalary.placeholder}}"/>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="desiredSalary">Desired Salary</label>
+                <input class="form-control" type="text" id="desiredSalary" name="desiredSalary" ng-model="form.element.desiredSalary.value" />
+            </div>
+
+            <div class="form-group">
+                <label for="availableDate">Available Date</label>
+                <input class="form-control" type="date" id="availableDate" name="availableDate" ng-model="form.element.availableDate.value" value="{{form.element.availableDate.value | date:'yyyy-MM-dd'}}"   required />
+                <ul class="errors">
+                    <li class="text-danger" ng-show="editContactForm.availableDate.$error.required">Please enter Available Date.</li>
+                    <li class="text-danger" ng-show="editContactForm.availableDate.$error.date">Not a valid date!</li>
+                </ul>
+
+            </div>
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input class="form-control" type="email" id="email" name="email" ng-model="form.element.email.value" placeholder="{{form.element.email.placeholder}}" ng-minlength="6" ng-maxlength="80" ng-pattern="form.element.email.regex" required />
+                <ul class="errors">
+                    <li class="text-danger" ng-show="editContactForm.email.$error.required">Please enter your email address.</li>
+                    <li class="text-danger" ng-show="editContactForm.email.$error.pattern">Email address is invalid.</li>
+                    <li class="text-danger" ng-show="editContactForm.email.$error.minlength">Email address is too short (must be between 6-80 characters).</li>
+                    <li class="text-danger" ng-show="editContactForm.email.$error.maxlength">Email address is too long (must be between 6-80 characters).</li>
+                </ul>
+            </div>
+
+            <div class="form-group">
+                <label for="address">Street Address</label>
+                <input class="form-control" type="text" id="address" name="address" ng-model="form.element.address.value" placeholder="{{form.element.address.placeholder}}" required />
+                <ul class="errors">
+                    <li class="text-danger" ng-show="editContactForm.address.$error.required">Please enter your street address.</li>
+                </ul>
+            </div>
+            <div class="element-table">
+            <div class="form-group">
+                <label for="suburb">Suburb</label>
+                <input class="form-control" type="text" id="suburb" name="suburb" ng-model="form.element.suburb.value" placeholder="{{form.element.suburb.placeholder}}" required />
+                <ul class="errors">
+                    <li class="text-danger" ng-show="editContactForm.suburb.$error.required">Please enter your suburb.</li>
+                </ul>
+            </div>
+
+            <div class="form-group">
+                <label for="postcode">Postcode</label>
+                <input class="form-control" type="text" id="postcode" name="postcode" ng-model="form.element.postcode.value" placeholder="{{form.element.postcode.placeholder}}" required />
+                <ul class="errors">
+                    <li class="text-danger" ng-show="editContactForm.postcode.$error.required">Please enter your postcode.</li>
+                </ul>
+            </div>
+        </div>
+
+            <div class="element-table">
+                <div class="form-group">
+                    <label for="state">State</label>
+                    <select class="form-control" id="state" name="state" ng-model="form.element.state.value" ng-options="state.code as state.name for state in form.element.state.options" ng-show="form.element.state.options.length" required>
+                        <option value="">Please Select</option>
+                    </select>
+                    <input class="form-control" type="text" id="state" name="state" ng-model="form.element.state.value" placeholder="{{form.element.state.placeholder}}" ng-hide="form.element.state.options.length" required />
+                    <ul class="errors">
+                        <li class="text-danger" ng-show="editContactForm.state.$error.required">Please enter your state.</li>
+                    </ul>
+                </div>
+            </div>
+
+
+            </div>
+
+        </div>
+    </div>
+
+    <div class="form-group cta">
+        <span class="icon-loading" ng-show="form.state.sending"></span>
+        <button type="submit" class="btn red" ng-disabled="form.state.sending">Save<span class="glyphicon glyphicon-chevron-right"></span></button>
+    </div>
+
+</form>
