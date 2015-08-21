@@ -17,7 +17,7 @@ Clone the repository using [git][git]:
 
 ```
 git clone https://github.com/dhuang123/user.git
-
+cd user
 ```
 
 ### Install Dependencies
